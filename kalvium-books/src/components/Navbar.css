@@ -1,0 +1,48 @@
+.logo {
+  font-family: "Rubik", sans-serif;
+  text-align: center;
+  color: #ef3837;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 10vh;
+  background: #f1f0cc;
+  padding: 10px 20px;
+}
+
+.navbar-link {
+  color: black;
+  text-decoration: none;
+  font-weight: 900;
+}
+
+#registration-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+}
+
+#registration-btn,
+#log-out-btn {
+  padding: 10px;
+  max-width: 30vw;
+  border: 3px solid black;
+  color: red;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .logo{
+    font-size: 5vw;
+  }
+}

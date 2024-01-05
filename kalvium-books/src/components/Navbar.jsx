@@ -3,6 +3,7 @@ import "../index.css";
 import { Link } from "react-router-dom";
 import { AppContext } from "../context/ParentContext";
 import { ToastContainer, toast } from "react-toastify";
+import "./Navbar.css";
 
 const Navbar = () => {
   const { isLoggedIn, setIsLoggedIn } = useContext(AppContext);
@@ -28,35 +29,13 @@ const Navbar = () => {
       theme: "dark",
     });
   };
-  
+
   return (
     <>
-    <ToastContainer />
-      <div
-        className="navbar"
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          height: "10vh",
-          background: "#F1F0CC",
-          padding: "10px 20px",
-        }}
-      >
-        <Link
-          to={"/"}
-          style={{ color: "black", textDecoration: "none", fontWeight: "900" }}
-        >
-          <h1
-            className="logo"
-            style={{
-              textAlign: "center",
-              color: "#EF3837",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
+      <ToastContainer />
+      <div className="navbar">
+        <Link className="navbar-link" to={"/"}>
+          <h1 className="logo">
             <img
               src="https://kalvium.community/images/sidebar-3d-logo.svg"
               alt="Kalvium Books Logo"
@@ -65,36 +44,14 @@ const Navbar = () => {
           </h1>
         </Link>
 
-        <div
-          id="registration-div"
-          style={{
-            width: "200px",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            columnGap: "10px",
-          }}
-        >
+        <div id="registration-div">
           {isLoggedIn ? (
             <button id="log-out-btn" onClick={logOutHandle}>
               Log Out
             </button>
           ) : (
             <Link to={"/SignUp"}>
-              <button
-                id="registration-btn"
-                style={{
-                  padding: "10px",
-                  width: "150px",
-                  border: "3px solid black",
-                  color: "red",
-                  fontSize: "1rem",
-                  fontWeight: "600",
-                  cursor: "pointer",
-                }}
-              >
-                Register
-              </button>
+              <button id="registration-btn">Register</button>
             </Link>
           )}
         </div>

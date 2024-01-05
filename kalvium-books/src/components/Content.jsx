@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { AppContext } from "../context/ParentContext";
 import { Link } from "react-router-dom";
+import "./Content.css";
 
 const Home = () => {
   const [searchInput, setSearchInput] = useState("");
@@ -39,21 +40,7 @@ const Home = () => {
 
   return (
     <div className="home">
-      <div
-        id="search-bar"
-        style={{
-          display: "flex",
-          placeItems: "center",
-          columnGap: "5px",
-          background: "white",
-          height: "20px",
-          margin: "1vw auto",
-          padding: "10px",
-          border: "2px solid black",
-          borderRadius: "5px",
-          width: "30vw",
-        }}
-      >
+      <div id="search-bar">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"
@@ -66,18 +53,11 @@ const Home = () => {
         <input
           type="text"
           value={searchInput}
+          id="search-input"
           onChange={(e) => {
             handleInput(e);
           }}
           placeholder="Search Books"
-          style={{
-            width: "400px",
-            height: "3vh",
-            border: "none",
-            padding: "5px",
-            outline: "none",
-            fontSize: "1rem",
-          }}
         />
       </div>
 
@@ -90,7 +70,7 @@ const Home = () => {
           style={{ display: `${books.length == 0 ? "flex" : "grid"}` }}
         >
           {books.length == 0 ? (
-            <h1 style={{ textAlign: "center" }}>No Books Found</h1>
+            <h1 className="text-align-center">No Books Found</h1>
           ) : (
             books.map((e) => {
               return (
@@ -98,10 +78,7 @@ const Home = () => {
                   {!isLoggedIn && (
                     <div className="register-div">
                       <Link to={"/SignUp"}>
-                        <button
-                          style={{ cursor: "pointer" }}
-                          className="register-btn"
-                        >
+                        <button className="register-btn pointer">
                           Register
                         </button>
                       </Link>
@@ -114,11 +91,7 @@ const Home = () => {
                     }}
                   >
                     {isLoggedIn ? (
-                      <a
-                        href={e.previewLink}
-                        style={{ textDecoration: "none" }}
-                        target="_blank"
-                      >
+                      <a href={e.previewLink} target="_blank">
                         <img
                           className="image"
                           src={e.imageLinks.thumbnail}

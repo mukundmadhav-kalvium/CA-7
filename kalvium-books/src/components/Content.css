@@ -1,0 +1,135 @@
+#search-bar {
+  display: flex;
+  place-items: center;
+  column-gap: 5px;
+  background: white;
+  height: 20px;
+  width: 30vw;
+  margin: 1vw auto;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+#search-input {
+  height: 3vh;
+  border: none;
+  padding: 5px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.content-div {
+  font-family: "Poppins", sans-serif;
+}
+
+.book-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  place-content: center;
+  place-items: center;
+  gap: 30px;
+  padding: 50px;
+}
+
+.card {
+  /* padding: 5px; */
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.category {
+  padding-left: 20px;
+}
+
+.image {
+  height: 20vw;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+.price {
+  margin: 0 10px;
+}
+
+.book {
+  width: 20vw;
+  height: 30vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  width: fit-content;
+  height: fit-content;
+}
+
+.register-div {
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vw;
+  width: 20vw;
+  position: absolute;
+}
+
+.register-btn {
+  z-index: 5;
+  font-size: larger;
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 3px;
+  border-radius: 2px;
+}
+
+.register-btn:hover {
+  border: 2px solid white;
+}
+
+@media only screen and (max-width: 768px) {
+  .home {
+    margin-top: 20px;
+  }
+
+  #search-bar {
+    width: 70vw;
+  }
+
+  .category {
+    text-align: center;
+    padding: 0;
+  }
+
+  .book-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .book {
+    height: 80vw;
+    width: 40vw;
+  }
+
+  .image {
+    height: 40vw;
+  }
+
+  .register-div {
+    height: 80vw;
+    width: 40vw;
+  }
+}

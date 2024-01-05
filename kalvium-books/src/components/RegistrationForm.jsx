@@ -4,6 +4,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 import { AppContext } from "../context/ParentContext";
+import "./RegistrationForm.css";
 
 const RegistrationForm = () => {
   const {
@@ -71,7 +72,6 @@ const RegistrationForm = () => {
             <label>
               Name
               <input
-                className="form-input"
                 type="text"
                 name="Name"
                 autoComplete="none"
@@ -93,12 +93,11 @@ const RegistrationForm = () => {
             <label>
               Email Address
               <input
-                className="form-input"
                 type="text"
                 name="email"
                 autoComplete="none"
                 {...register("email", {
-                  required: "Please enter email",
+                  required: "Please enter Email",
                   pattern: {
                     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
                     message: "Please enter a valid email address",
@@ -110,7 +109,6 @@ const RegistrationForm = () => {
             <label>
               Password
               <input
-                className="form-input"
                 type={showPassword ? "text" : "password"}
                 name="password"
                 {...register("password", {
@@ -133,11 +131,10 @@ const RegistrationForm = () => {
             <label>
               Confirm Password
               <input
-                className="form-input"
                 type={showPassword ? "text" : "password"}
                 name="confirmPassword"
                 {...register("confirmPassword", {
-                  required: "Please Confirm your Password",
+                  required: "Please confirm Password",
                   validate: (value) =>
                     value === passwordValue || "Password doesn't match",
                 })}
@@ -145,10 +142,10 @@ const RegistrationForm = () => {
             </label>
             {<p className="err">{errors.confirmPassword?.message}</p>}
 
-            <label style={{ display: "flex" }}>
+            <label className="flex">
               <input
+                className="check-box"
                 type="checkbox"
-                style={{ width: "0.85rem", margin: "0 1rem" }}
                 onClick={passwordShow}
               />
               <h2>Show Password</h2>
